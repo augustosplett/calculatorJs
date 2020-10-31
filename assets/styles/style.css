@@ -1,0 +1,23 @@
+*{
+    text-align: center;
+    margin: 0 auto;
+}
+.btn-default{
+    width: 25%;
+    border-radius: 0.35rem;
+ }
+.btn-double{
+    width: 50%;
+    border-radius: 0.35rem;
+}
+.corpo-calculadora{
+    width: 200px;
+    height: 300px;
+    background-color:lightgrey;
+}
+.linha{
+    height: 15%;
+}
+.linha1{
+    height: 25%;
+}
