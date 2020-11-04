@@ -4,33 +4,43 @@ var operation = 0;
 var display = document.getElementById("display-frame");
 display.value = 0;
 const teclasNumericas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const teclasLimpeza = ['C','AC'];
-const teclasOperacao = ['signal-change', 'divide-by', 'times', 'minus', 'plus', 'dot','equals'];
+const teclasLimpeza = ['C', 'AC'];
+const teclasOperacao = ['signal-change', 'divide-by', 'times', 'minus', 'plus', 'dot', 'equals'];
 
-function tecla(valor){
-    if(teclasNumericas.indexOf(valor)>-1){
-        if(display.value == valor1){
+function tecla(valor) {
+    
+    if (teclasNumericas.indexOf(valor) > -1) {
+        if (display.value == valor1 || display.value == 0) {
             display.value = valor;
-        }else{
-            if(display.value == 0){
-                display.value = valor
-            }else{
-            display.value = display.value + valor;  
-            }
+        } else {
+            display.value = display.value + valor;
         }
     }
-    if(teclasLimpeza.indexOf(valor)>-1){
-        valor1 = 0;
-        valor2 = 0;
-        operation = 0; 
-        display.value = 0;
-    } 
-    if(teclasOperacao.indexOf(valor)>-1){
-        if(operation != 0){
+
+    if (teclasLimpeza.indexOf(valor) > -1) {
+        if (valor == 'C') {
+            if (operation != 0) {
+                display.value = valor1;
+                operation = 0;
+            } else {
+                display.value = 0;
+                valor1 = 0;
+            }
+        }
+        if (valor == 'AC') {
+            valor1 = 0;
+            valor2 = 0;
+            operation = 0;
+            display.value = 0;
+        }
+    }
+
+    if (teclasOperacao.indexOf(valor) > -1) {
+        if (operation != 0) {
             valor2 = display.value;
             display.value = String(solveOperation());
             valor1 = display.value;
-        }else{
+        } else {
             valor1 = display.value;
             display.value = 0;
         }
@@ -38,18 +48,18 @@ function tecla(valor){
     }
 }
 
-function solveOperation(){
+function solveOperation() {
     valor1 = Number(valor1);
     valor2 = Number(valor2);
-    switch(operation){
+    switch (operation) {
         case 'divide-by': return valor1 / valor2;
         case 'times': return valor1 * valor2;
         case 'minus': return valor1 - valor2;
-        case 'plus': return valor1 + valor2;   
+        case 'plus': return valor1 + valor2;
     }
 }
 
 
-function displayLength(display){
+function displayLength(display) {
     return display.length;
 }
