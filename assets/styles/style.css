@@ -21,3 +21,7 @@
 .linha1{
     height: 25%;
 }
+#display-frame{
+    text-align: end;
+    font-size: xx-large;
+}
