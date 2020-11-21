@@ -1,12 +1,11 @@
+const teclasNumericas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const teclasLimpeza = ['C', 'AC'];
+const teclasOperacao = [ 'divide-by', 'times', 'minus', 'plus', 'dot', 'equals'];
 var valor1 = 0;
 var valor2 = 0;
 var operation = 0;
 var display = document.getElementById("display-frame");
 display.value = 0;
-const teclasNumericas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const teclasLimpeza = ['C', 'AC'];
-const teclasOperacao = [ 'divide-by', 'times', 'minus', 'plus', 'dot', 'equals'];
-
 
 function tecla(valor) {
     if(valor == 'signal-change'){
